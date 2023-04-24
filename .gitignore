@@ -1,1 +1,4 @@
 /.vscode
+
+/hola_scarb/target
+/hola_scarb_con_dependencias/target

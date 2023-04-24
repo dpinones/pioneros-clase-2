@@ -6,3 +6,6 @@ version = "0.1.0"
 
 [dependencies]
 # foo = { path = "vendor/foo" }
+
+[scripts]
+test = "cairo-test ."
