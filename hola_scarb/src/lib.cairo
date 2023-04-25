@@ -1,3 +1,5 @@
+mod balance;
+use balance::Balance;
 mod fibonacci;
-mod utils;
 mod test;
+mod utils;
