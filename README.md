@@ -8,21 +8,21 @@ Presentación de la clase 2 [aquí](https://docs.google.com/presentation/d/1IJUT
 
 ## Cairo 1
 
-### StarkNet
+### Starknet
 
-StarkNet es un ZK-rollup descentralizado que opera como una L2 sobre Ethereum.
+Starknet es un ZK-rollup descentralizado que opera como una L2 sobre Ethereum.
 Permite que las aplicaciones descentralizadas logren una escala ilimitada para su cálculo, sin comprometer la descentralización y la seguridad de Ethereum, resolviendo así el trilema de escalabilidad.
 
 ### Cairo
 
 Cairo es un lenguaje de programación completo de Turing para crear programas comprobables por STARK para computación general.
-La nueva version de Cairo inspirada en Rust, permite a los desarrolladores escribir contratos inteligentes de Starknet de una manera segura y conveniente.
+La nueva versión de Cairo inspirada en Rust, permite a los desarrolladores escribir contratos inteligentes de Starknet de una manera segura y conveniente.
 
 ### Contrato vs Programa
 
-_Contrato:_ son programas que se ejecutan en la Máquina Virtual (VM) de StarkNet y tienen acceso al estado persistente de StarkNet. Pueden modificar variables, comunicarse con otros contratos y operar sin problemas la L1.
+_Contrato:_ son programas que se ejecutan en la Máquina Virtual (VM) de Starknet y tienen acceso al estado persistente de la misma. Pueden modificar variables, comunicarse con otros contratos y operar sin problemas con la L1.
 
-_Programa:_ son un tipo de contrato sin estado, lo que significa que no tienen acceso al almacenamiento mientras se escriben y no pueden interactuar con otros programas de Cairo ni con la cadena L1.
+_Programa:_ son programas que se NO ejecutan en la Máquina Virtual (VM) de Starknet. Por lo tanto, no tienen acceso al almacenamiento de la misma y no pueden interactuar con otros contratos ni con la L1.
 
 ### Comandos útiles
 
@@ -37,7 +37,7 @@ _Programa:_ son un tipo de contrato sin estado, lo que significa que no tienen a
 | Comando | Descripción |
 | ----------------------- | ---------------------------------------- |
 |source ~/cairo_venv_v11/bin/activate|Acceder al entorno virtual de Python|
-|starknet --version|Versión de StarkNet|
+|starknet --version|Versión de Starknet|
 |starknet-compile -- ./balance.cairo ./balance.json|Compilar el contrato|
 |starknet declare --contract ./balance.json --account version_11|Declarar el contrato|
 |starknet deploy --class_hash <class_hash> --account version_11|Deploy del contrato|
@@ -47,12 +47,13 @@ Para mas información sobre como hacer el deploy de un contrato, revisa el sigui
 ---
 
 ## Scarb
+Scarb es el administrador de paquetes de Cairo. Está inspirado en Cargo que es el sistema de compilación y el administrador de paquetes de Rust. 
 
 ### Instalación
-Descargar el archivo comprimido dependiendo su sistema operativo. En este caso la version 0.2.0 en [pre-release](https://github.com/software-mansion/scarb/releases/tag/v0.2.0-alpha.0).
+Descargar el archivo comprimido dependiendo su sistema operativo. En este caso la versión 0.2.0 en [pre-release](https://github.com/software-mansion/scarb/releases/tag/v0.2.0-alpha.0).
 Una vez descargado el archivo, lo descomprimimos, lo movemos a un directorio y agregamos la carpeta `scarb/bin` al path de nuestro OS.
-Reiniciamos la terminal y ya deberiamos tener instalado Scarb.
-Para chequear si esta instalado podemos ejecutar el comando:
+Reiniciamos la terminal y ya deberíamos tener instalado Scarb.
+Para chequear si está instalado podemos ejecutar el comando:
 ```bash
 scarb --version
 > scarb 0.2.0-alpha.0 (04eb95172 2023-04-13)
@@ -61,7 +62,7 @@ scarb --version
 
 ### Crear un proyecto
 
-Para crear un proyecto, debemos ejecutar el comando `scarb new project_name`. El comando en nuestro caso seria el siguiente:
+Para crear un proyecto, debemos ejecutar el comando `scarb new project_name`. El comando en nuestro caso sería el siguiente:
 
 ```bash
 scarb new hello_scarb
@@ -97,7 +98,7 @@ scarb build
 ```
 
 ### Scripts personalizados
-Para ejecutar un script personalizado, debemos ejecutar el comando `scarb run script_name`. En este caso quedaria `scarb run test`.
+Podemos crear scripts en el archivo `Scarb.toml` que se pueden ejecutar con Scarb. De esta manera, podemos ejecutar scripts de shell personalizados utilizando el comando `scarb run script_name`, donde `script_name` es el nombre del script personalizado. Por ejemplo, si queremos ejecutar un script llamado `test`, debemos ingresar el comando `scarb run test`.
 
 Ejemplo: `Scarb.toml`
 ```javascript
@@ -110,8 +111,7 @@ test = "cairo-test .";
 ```
 
 ### Agregar dependencias
-De esta manera podemos agregar dependencias a nuestro proyecto. En nuestro caso vamos a agregar la dependencia `math_scarb`.
-Para actualizar las dependencias, debemos ejecutar el comando `scarb build`.
+En el archivo `Scarb.toml` podemos agregar las dependencias que necesitamos para nuestro proyecto. En nuestro caso, vamos a agregar la dependencia `math_scarb`. Luego, para actualizar las dependencias, podemos ejecutar el comando `scarb build`.
 
 Ejemplo: `Scarb.toml`
 ```javascript
@@ -128,7 +128,7 @@ math_scarb = { git = "https://github.com/dpinones/math_scarb.git", rev = "b68667
 ### cairo_project.toml
 
 Este es el archivo de configuración para los proyectos Cairo "vainilla" (no administrados por Scarb), se requiere este archivo para poder ejecutar el comando `cairo-test`. Se requiere hasta que Scarb implemente esta característica.
-Podemos generar este archivo gracias al comando `scarb eject`. Tambien lo podemos crear de forma manual.
+Podemos generar este archivo gracias al comando `scarb eject`. También lo podemos crear de forma manual.
 
 Ejemplo: `cairo_project.toml`
 
@@ -140,7 +140,7 @@ hello_scarb = "src";
 - Podemos crear un proyecto usando el comando `scarb new`.
 - Podemos construir un proyecto usando el comando `scarb build`, que nos genera el código de Sierra compilado.
 - Podemos definir scripts personalizados en el `Scarb.toml`, y para llamarlos con el comando `scarb run`.
-- Podemos agregar dependencias a nuestro proyecto. Añadiendolas en el `Scarb.toml`, y luego ejecutando el comando `scarb build`.
+- Podemos agregar dependencias a nuestro proyecto. Añadiéndolas en el `Scarb.toml`, y luego ejecutando el comando `scarb build`.
 - Podemos generar el archivo `cairo_project.toml` usando el comando scarb eject. Este archivo es necesario para poder ejecutar el comando `cairo-test`. Esto es de forma provisorio hasta que Scarb implemente esta característica.
 
 ---
