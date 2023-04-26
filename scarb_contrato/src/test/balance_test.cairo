@@ -1,4 +1,4 @@
-use hola_scarb::Balance;
+use scarb_contrato::Balance;
 use starknet::testing::set_caller_address;
 use starknet::ContractAddress;
 use starknet::contract_address_try_from_felt252;

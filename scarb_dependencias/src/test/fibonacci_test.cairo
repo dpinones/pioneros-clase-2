@@ -1,4 +1,4 @@
-use hola_scarb::fibonacci;
+use scarb_dependencias::fibonacci;
 
 #[test]
 #[available_gas(200000)]

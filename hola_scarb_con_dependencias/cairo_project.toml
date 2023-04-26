@@ -1,4 +1,0 @@
-[crate_roots]
-hola_scarb_con_dependencias = "src"
-math_scarb = "/home/dami/.cache/scarb/registry/git/checkouts/math_scarb-PG35FCOHE3A6O/b68667f/src"
-

@@ -1,4 +1,6 @@
 /.vscode
 
-/hola_scarb/target
-/hola_scarb_con_dependencias/target
+/hola_mundo/target
+/scarb_contrato/target
+/scarb_dependencias/target
+/scarb_test/target

@@ -1,0 +1,2 @@
+[crate_roots]
+scarb_test = "src"

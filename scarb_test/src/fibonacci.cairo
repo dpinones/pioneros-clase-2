@@ -1,4 +1,4 @@
-use hola_scarb::utils;
+use scarb_test::utils;
 
 fn fib(n: felt252) -> felt252 {
     fib_internal(0, 1, n)
