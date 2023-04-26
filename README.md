@@ -22,7 +22,7 @@ La nueva versión de Cairo inspirada en Rust, permite a los desarrolladores escr
 
 _Contrato:_ son programas que se ejecutan en la Máquina Virtual (VM) de Starknet y tienen acceso al estado persistente de la misma. Pueden modificar variables, comunicarse con otros contratos y operar sin problemas con la L1.
 
-_Programa:_ son programas que se NO ejecutan en la Máquina Virtual (VM) de Starknet. Por lo tanto, no tienen acceso al almacenamiento de la misma y no pueden interactuar con otros contratos ni con la L1.
+_Programa:_ son programas que NO se ejecutan en la Máquina Virtual (VM) de Starknet. Por lo tanto, no tienen acceso al almacenamiento de la misma y no pueden interactuar con otros contratos ni con la L1.
 
 ### Comandos útiles
 
