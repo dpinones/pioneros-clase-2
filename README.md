@@ -15,7 +15,7 @@ Permite que las aplicaciones descentralizadas logren una escala ilimitada para s
 
 ### Cairo
 
-Cairo es un lenguaje de programación completo de Turing para crear programas comprobables por STARK para computación general.
+Cairo es un lenguaje de programación Turing completo para crear programas comprobables con las STARK para computación general.
 La nueva versión de Cairo inspirada en Rust, permite a los desarrolladores escribir contratos inteligentes de Starknet de una manera segura y conveniente.
 
 ### Contrato vs Programa
@@ -31,7 +31,7 @@ _Programa:_ son programas que NO se ejecutan en la Máquina Virtual (VM) de Star
 | ----------------------- | ---------------------------------------- |
 | cairo-compile --version | Versión de cairo-compile |
 | cairo-run main.cairo | Ejecutar un programa(Debe tener un main) |
-| cairo-test . --starknet | Corre las pruebas |
+| cairo-test . --starknet | Ejecuto los test |
 
 **cairo_lang** \*recorda estar dentro del entorno virtual de Python
 | Comando | Descripción |
@@ -67,7 +67,7 @@ Para crear un proyecto, debemos ejecutar el comando `scarb new project_name`. El
 ```bash
 scarb new hello_scarb
 ```
-Si queremos que nuestro proyecto no tenga VCS, podemos usar el flag `--vcs`.
+Si queremos que nuestro proyecto no tenga VCS, podemos usar el flag `--no-vcs`.
 
 ### Estructura del proyecto
 Como resultado de ejecutar `scarb new` nos genera una carpeta con dos archivos.
