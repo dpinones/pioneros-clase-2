@@ -1,3 +1,4 @@
 [crate_roots]
-scarb_dependencias = "src"
-math_scarb = "/home/dami/.cache/scarb/registry/git/checkouts/math_scarb-PG35FCOHE3A6O/b68667f/src"
+math_scarb = "/home/dami/.cache/scarb/registry/git/checkouts/math_scarb-PG35FCOHE3A6O/f97ef25/src"
+scarb_dependencias = "/home/dami/Documents/rust/clase/pioneros-clase-2/scarb_dependencias/src"
+
